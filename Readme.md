@@ -14,13 +14,19 @@ This repository documents an end-to-end **Microsoft Entra ID Governance** deploy
   - Restricted self-service eligibility to internal directory members (`All members (excluding guests)`).
   - Enforced mandatory requestor business justification and single-stage approval by `Varun Mahajan` (`admin@ApexModernWork.onmicrosoft.com`).
   - Configured automatic **30-day assignment expiration** (`12/21/2026`) and recurring quarterly access reviews.
-- **Evidence:** [`01-access-package-overview-config.png`](./01-Entitlement-Management-Catalog/01-access-package-overview-config.png)
+
+<img src="01-Entitlement-Management-Catalog/01-access-package-overview-config.png" alt="Access Package Overview" width="100%"/>
+
+---
 
 ### 2. Self-Service Request & Approval Workflow (`02-Access-Package-Request-Approval`)
 - **End-User Self-Service (`myaccess.microsoft.com`):** Verified standard user (`pilotuser1@ApexModernWork.onmicrosoft.com`) self-service request submission with business justification.
 - **Admin Governance Approval:** Reviewed and approved the request via the My Access Approvals queue with documented approver justification.
-- **Automated Provisioning:** Verified dynamic group membership provisioning and `Delivered` assignment state with automatic 30-day expiration tracking in Entra ID.
-- **Evidence:** [`02-access-package-approved-delivered.png`](./02-Access-Package-Request-Approval/02-access-package-approved-delivered.png)
+- **Automated Provisioning:** Verified automated group membership provisioning and `Delivered` assignment state with 30-day expiration tracking in Entra ID.
+
+<img src="02-Access-Package-Request-Approval/02-access-package-approved-delivered.png" alt="Access Package Delivered" width="100%"/>
+
+---
 
 ### 3. Automated Access Reviews & Fail-Safe Revocation (`03-Automated-Access-Reviews`)
 - **Access Review Policy:** Deployed `Apex Quarterly Privileged Group Access Review` targeting privileged group memberships (`Everyone` scope).
@@ -28,7 +34,8 @@ This repository documents an end-to-end **Microsoft Entra ID Governance** deploy
   - Enabled **Auto-apply results to resource** so denied or unreviewed memberships are automatically stripped upon review completion.
   - Enforced zero-trust fail-safe rule: **If reviewers don't respond -> Remove access**.
   - Enabled **30-day inactive sign-in decision helpers** and mandatory reviewer justification.
-- **Evidence:** [`03-automated-access-review-config.png`](./03-Automated-Access-Reviews/03-automated-access-review-config.png)
+
+<img src="03-Automated-Access-Reviews/03-automated-access-review-config.png" alt="Automated Access Review" width="100%"/>
 
 ---
 
